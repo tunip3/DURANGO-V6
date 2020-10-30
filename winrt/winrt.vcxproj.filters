@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>0160047f-a070-4461-90cb-6cd7af9f1c4b</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+    <Filter Include="sources">
+      <UniqueIdentifier>{b9c80754-e03f-47c0-8320-b72f586035e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallTile.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallTile.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallTile.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallTile.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallTile.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LargeTile.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LargeTile.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LargeTile.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LargeTile.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LargeTile.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-16.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-32.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-48.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-256.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-125.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-150.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BinaryBlob.cpp" />
+    <ClCompile Include="..\BlockV.cpp" />
+    <ClCompile Include="..\editor.cpp" />
+    <ClCompile Include="..\Ent.cpp" />
+    <ClCompile Include="..\Entity.cpp" />
+    <ClCompile Include="..\FileSystemUtils.cpp" />
+    <ClCompile Include="..\Finalclass.cpp" />
+    <ClCompile Include="..\Game.cpp" />
+    <ClCompile Include="..\Graphics.cpp" />
+    <ClCompile Include="..\GraphicsResources.cpp" />
+    <ClCompile Include="..\GraphicsUtil.cpp" />
+    <ClCompile Include="..\Input.cpp" />
+    <ClCompile Include="..\KeyPoll.cpp" />
+    <ClCompile Include="..\Labclass.cpp" />
+    <ClCompile Include="..\Logic.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\Map.cpp" />
+    <ClCompile Include="..\Music.cpp" />
+    <ClCompile Include="..\Otherlevel.cpp" />
+    <ClCompile Include="..\preloader.cpp" />
+    <ClCompile Include="..\Render.cpp" />
+    <ClCompile Include="..\Screen.cpp" />
+    <ClCompile Include="..\Script.cpp" />
+    <ClCompile Include="..\Scripts.cpp" />
+    <ClCompile Include="..\SoundSystem.cpp" />
+    <ClCompile Include="..\Spacestation2.cpp" />
+    <ClCompile Include="..\TerminalScripts.cpp" />
+    <ClCompile Include="..\Textbox.cpp" />
+    <ClCompile Include="..\Tower.cpp" />
+    <ClCompile Include="..\UtilityClass.cpp" />
+    <ClCompile Include="..\WarpClass.cpp" />
+    <ClCompile Include="sources\SDL_winrt_main_NonXAML.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tinyxml2.cpp" />
+    <ClCompile Include="..\GOGNetwork.c" />
+    <ClCompile Include="..\Network.c" />
+    <ClCompile Include="..\physfs.c" />
+    <ClCompile Include="..\physfs_archiver_7z.c" />
+    <ClCompile Include="..\physfs_archiver_dir.c" />
+    <ClCompile Include="..\physfs_archiver_grp.c" />
+    <ClCompile Include="..\physfs_archiver_hog.c" />
+    <ClCompile Include="..\physfs_archiver_iso9660.c" />
+    <ClCompile Include="..\physfs_archiver_mvl.c" />
+    <ClCompile Include="..\physfs_archiver_qpak.c" />
+    <ClCompile Include="..\physfs_archiver_slb.c" />
+    <ClCompile Include="..\physfs_archiver_unpacked.c" />
+    <ClCompile Include="..\physfs_archiver_vdf.c" />
+    <ClCompile Include="..\physfs_archiver_wad.c" />
+    <ClCompile Include="..\physfs_archiver_zip.c" />
+    <ClCompile Include="..\physfs_byteorder.c" />
+    <ClCompile Include="..\physfs_platform_haiku.cpp" />
+    <ClCompile Include="..\physfs_platform_os2.c" />
+    <ClCompile Include="..\physfs_platform_posix.c" />
+    <ClCompile Include="..\physfs_platform_qnx.c" />
+    <ClCompile Include="..\physfs_platform_unix.c" />
+    <ClCompile Include="..\physfs_platform_windows.c" />
+    <ClCompile Include="..\physfs_platform_winrt.cpp" />
+    <ClCompile Include="..\physfs_unicode.c" />
+    <ClCompile Include="..\SteamNetwork.c" />
+    <ClCompile Include="..\lodepng.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BinaryBlob.h" />
+    <ClInclude Include="..\BlockV.h" />
+    <ClInclude Include="..\Credits.h" />
+    <ClInclude Include="..\editor.h" />
+    <ClInclude Include="..\Ent.h" />
+    <ClInclude Include="..\Entity.h" />
+    <ClInclude Include="..\Enums.h" />
+    <ClInclude Include="..\FileSystemUtils.h" />
+    <ClInclude Include="..\Finalclass.h" />
+    <ClInclude Include="..\Game.h" />
+    <ClInclude Include="..\Graphics.h" />
+    <ClInclude Include="..\GraphicsResources.h" />
+    <ClInclude Include="..\GraphicsUtil.h" />
+    <ClInclude Include="..\Input.h" />
+    <ClInclude Include="..\KeyPoll.h" />
+    <ClInclude Include="..\Labclass.h" />
+    <ClInclude Include="..\Logic.h" />
+    <ClInclude Include="..\MakeAndPlay.h" />
+    <ClInclude Include="..\Map.h" />
+    <ClInclude Include="..\Maths.h" />
+    <ClInclude Include="..\Music.h" />
+    <ClInclude Include="..\Network.h" />
+    <ClInclude Include="..\Otherlevel.h" />
+    <ClInclude Include="..\preloader.h" />
+    <ClInclude Include="..\Render.h" />
+    <ClInclude Include="..\Screen.h" />
+    <ClInclude Include="..\Script.h" />
+    <ClInclude Include="..\SoundSystem.h" />
+    <ClInclude Include="..\Spacestation2.h" />
+    <ClInclude Include="..\Textbox.h" />
+    <ClInclude Include="..\Tower.h" />
+    <ClInclude Include="..\UtilityClass.h" />
+    <ClInclude Include="..\WarpClass.h" />
+    <ClInclude Include="..\tinyxml2.h" />
+    <ClInclude Include="..\physfs.h" />
+    <ClInclude Include="..\physfs_casefolding.h" />
+    <ClInclude Include="..\physfs_internal.h" />
+    <ClInclude Include="..\physfs_lzmasdk.h" />
+    <ClInclude Include="..\physfs_miniz.h" />
+    <ClInclude Include="..\physfs_platforms.h" />
+    <ClInclude Include="..\lodepng.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\physfs_platform_apple.m" />
+    <None Include="data.zip" />
+    <None Include="VVVVV_TemporaryKey.pfx" />
+  </ItemGroup>
+</Project>

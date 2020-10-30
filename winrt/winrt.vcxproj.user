@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>D:\Users\t3\Downloads\VVVVVV.png</Source>
+    <SmallTileSource>D:\Users\t3\Downloads\VVVVVV.png</SmallTileSource>
+    <MediumTileSource>D:\Users\t3\Downloads\VVVVVV.png</MediumTileSource>
+    <WideTileSource>D:\Users\t3\Downloads\VVVVVV.png</WideTileSource>
+    <LargeTileSource>D:\Users\t3\Downloads\VVVVVV.png</LargeTileSource>
+    <AppIconSource>D:\Users\t3\Downloads\VVVVVV.png</AppIconSource>
+    <SplashScreenSource>D:\Users\t3\Downloads\VVVVVV.png</SplashScreenSource>
+    <PackageLogoSource>D:\Users\t3\Downloads\VVVVVV.png</PackageLogoSource>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x64</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
+    <DebuggerMachineName>XBOXONE</DebuggerMachineName>
+  </PropertyGroup>
+</Project>
