@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props" Condition="Exists('packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props')" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{92ac9e39-689a-4e67-9371-4f077eac8c98}</ProjectGuid>
+    <RootNamespace>winrt</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <ProjectName>VVVVV</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <PackageCertificateKeyFile>VVVVV_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories);$(ProjectDir)externals\SDL2_mixer;$(ProjectDir)externals\SDL2\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING</PreprocessorDefinitions>
+      <UseUnicodeForAssemblerListing>true</UseUnicodeForAssemblerListing>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\LargeTile.scale-100.png" />
+    <Image Include="Assets\LargeTile.scale-125.png" />
+    <Image Include="Assets\LargeTile.scale-150.png" />
+    <Image Include="Assets\LargeTile.scale-200.png" />
+    <Image Include="Assets\LargeTile.scale-400.png" />
+    <Image Include="Assets\LockScreenLogo.scale-200.png" />
+    <Image Include="Assets\SmallTile.scale-100.png" />
+    <Image Include="Assets\SmallTile.scale-125.png" />
+    <Image Include="Assets\SmallTile.scale-150.png" />
+    <Image Include="Assets\SmallTile.scale-200.png" />
+    <Image Include="Assets\SmallTile.scale-400.png" />
+    <Image Include="Assets\SplashScreen.scale-100.png" />
+    <Image Include="Assets\SplashScreen.scale-125.png" />
+    <Image Include="Assets\SplashScreen.scale-150.png" />
+    <Image Include="Assets\SplashScreen.scale-200.png" />
+    <Image Include="Assets\SplashScreen.scale-400.png" />
+    <Image Include="Assets\Square150x150Logo.scale-100.png" />
+    <Image Include="Assets\Square150x150Logo.scale-125.png" />
+    <Image Include="Assets\Square150x150Logo.scale-150.png" />
+    <Image Include="Assets\Square150x150Logo.scale-200.png" />
+    <Image Include="Assets\Square150x150Logo.scale-400.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Image Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Image Include="Assets\Square44x44Logo.scale-100.png" />
+    <Image Include="Assets\Square44x44Logo.scale-125.png" />
+    <Image Include="Assets\Square44x44Logo.scale-150.png" />
+    <Image Include="Assets\Square44x44Logo.scale-200.png" />
+    <Image Include="Assets\Square44x44Logo.scale-400.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Image Include="Assets\StoreLogo.scale-100.png" />
+    <Image Include="Assets\StoreLogo.scale-125.png" />
+    <Image Include="Assets\StoreLogo.scale-150.png" />
+    <Image Include="Assets\StoreLogo.scale-200.png" />
+    <Image Include="Assets\StoreLogo.scale-400.png" />
+    <Image Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Image Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Image Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Image Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Image Include="Assets\Wide310x150Logo.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\vendor\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="sources\vendor\lodepng\lodepng.cpp" />
+    <ClCompile Include="sources\vendor\physfs\physfs.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_7z.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_dir.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_grp.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_hog.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_iso9660.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_mvl.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_qpak.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_slb.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_unpacked.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_vdf.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_wad.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_archiver_zip.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_byteorder.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_haiku.cpp" />
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_os2.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_posix.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_qnx.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_unix.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_windows.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\vendor\physfs\physfs_platform_winrt.cpp" />
+    <ClCompile Include="sources\vendor\physfs\physfs_unicode.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\network\SteamNetwork.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\network\GOGNetwork.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\network\Network.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\BinaryBlob.cpp" />
+    <ClCompile Include="sources\BlockV.cpp" />
+    <ClCompile Include="sources\editor.cpp" />
+    <ClCompile Include="sources\Ent.cpp" />
+    <ClCompile Include="sources\Entity.cpp" />
+    <ClCompile Include="sources\FileSystemUtils.cpp">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsWinRT>
+    </ClCompile>
+    <ClCompile Include="sources\Finalclass.cpp" />
+    <ClCompile Include="sources\Game.cpp" />
+    <ClCompile Include="sources\Graphics.cpp" />
+    <ClCompile Include="sources\GraphicsResources.cpp" />
+    <ClCompile Include="sources\GraphicsUtil.cpp" />
+    <ClCompile Include="sources\Input.cpp" />
+    <ClCompile Include="sources\KeyPoll.cpp" />
+    <ClCompile Include="sources\Labclass.cpp" />
+    <ClCompile Include="sources\Logic.cpp" />
+    <ClCompile Include="sources\main.cpp" />
+    <ClCompile Include="sources\Map.cpp" />
+    <ClCompile Include="sources\Music.cpp" />
+    <ClCompile Include="sources\Otherlevel.cpp" />
+    <ClCompile Include="sources\preloader.cpp" />
+    <ClCompile Include="sources\Render.cpp" />
+    <ClCompile Include="sources\Screen.cpp" />
+    <ClCompile Include="sources\Script.cpp" />
+    <ClCompile Include="sources\Scripts.cpp" />
+    <ClCompile Include="sources\SoundSystem.cpp" />
+    <ClCompile Include="sources\Spacestation2.cpp" />
+    <ClCompile Include="sources\TerminalScripts.cpp" />
+    <ClCompile Include="sources\Textbox.cpp" />
+    <ClCompile Include="sources\Tower.cpp" />
+    <ClCompile Include="sources\UtilityClass.cpp" />
+    <ClCompile Include="sources\WarpClass.cpp" />
+    <ClCompile Include="sources\winrt\SDL_winrt_main_NonXAML.cpp">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsWinRT>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\vendor\tinyxml2\tinyxml2.h" />
+    <ClInclude Include="sources\vendor\lodepng\lodepng.h" />
+    <ClInclude Include="sources\vendor\physfs\physfs.h" />
+    <ClInclude Include="sources\vendor\physfs\physfs_casefolding.h" />
+    <ClInclude Include="sources\vendor\physfs\physfs_internal.h" />
+    <ClInclude Include="sources\vendor\physfs\physfs_lzmasdk.h" />
+    <ClInclude Include="sources\vendor\physfs\physfs_miniz.h" />
+    <ClInclude Include="sources\vendor\physfs\physfs_platforms.h" />
+    <ClInclude Include="sources\network\Network.h" />
+    <ClInclude Include="sources\BinaryBlob.h" />
+    <ClInclude Include="sources\BlockV.h" />
+    <ClInclude Include="sources\Credits.h" />
+    <ClInclude Include="sources\editor.h" />
+    <ClInclude Include="sources\Ent.h" />
+    <ClInclude Include="sources\Entity.h" />
+    <ClInclude Include="sources\Enums.h" />
+    <ClInclude Include="sources\FileSystemUtils.h" />
+    <ClInclude Include="sources\Finalclass.h" />
+    <ClInclude Include="sources\Game.h" />
+    <ClInclude Include="sources\Graphics.h" />
+    <ClInclude Include="sources\GraphicsResources.h" />
+    <ClInclude Include="sources\GraphicsUtil.h" />
+    <ClInclude Include="sources\Input.h" />
+    <ClInclude Include="sources\KeyPoll.h" />
+    <ClInclude Include="sources\Labclass.h" />
+    <ClInclude Include="sources\Logic.h" />
+    <ClInclude Include="sources\MakeAndPlay.h" />
+    <ClInclude Include="sources\Map.h" />
+    <ClInclude Include="sources\Maths.h" />
+    <ClInclude Include="sources\Music.h" />
+    <ClInclude Include="sources\Otherlevel.h" />
+    <ClInclude Include="sources\preloader.h" />
+    <ClInclude Include="sources\Render.h" />
+    <ClInclude Include="sources\Screen.h" />
+    <ClInclude Include="sources\Script.h" />
+    <ClInclude Include="sources\SoundSystem.h" />
+    <ClInclude Include="sources\Spacestation2.h" />
+    <ClInclude Include="sources\Textbox.h" />
+    <ClInclude Include="sources\Tower.h" />
+    <ClInclude Include="sources\UtilityClass.h" />
+    <ClInclude Include="sources\WarpClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.vcxproj">
+      <Project>{89e9b32e-a86a-47c3-a948-d2b1622925ce}</Project>
+    </ProjectReference>
+    <ProjectReference Include="externals\SDL2_mixer-2.0.4\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.vcxproj">
+      <Project>{18665277-e558-4484-93f4-e4dc7bb614cb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sources\vendor\physfs\physfs_platform_apple.m" />
+    <None Include="data.zip">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="packages.config" />
+    <None Include="VVVVV_TemporaryKey.pfx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets" Condition="Exists('packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets')" />
+    <Import Project="packages\utf8-cpp.2.3.4\build\native\utf8-cpp.targets" Condition="Exists('packages\utf8-cpp.2.3.4\build\native\utf8-cpp.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props'))" />
+    <Error Condition="!Exists('packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets'))" />
+    <Error Condition="!Exists('packages\utf8-cpp.2.3.4\build\native\utf8-cpp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\utf8-cpp.2.3.4\build\native\utf8-cpp.targets'))" />
+  </Target>
+</Project>
