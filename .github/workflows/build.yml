@@ -1,0 +1,59 @@
+name: build
+
+on:
+  push:
+    branches: [ "main", "task/restructure" ]
+  pull_request:
+    branches: [ "main", "task/restructure" ]
+
+jobs:
+  winrt-build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        build_arch: ['x64']
+
+    steps:
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1
+      with:
+        nuget-version: latest
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+    - name: Get the version
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      shell: bash
+    - name: Patch version on git tag
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+      run: |
+        If ($env:GIT_TAG){
+        (Get-Content .\project\Package.appxmanifest) | Foreach-Object {$_ -replace "1.0.0.0", "$env:GIT_TAG"} | Set-Content .\project\Package.appxmanifest
+        Write-Host -ForegroundColor Yellow "Setting AppxManifest version to $env:GIT_TAG"
+        }
+        else
+        {
+        Write-Host -ForegroundColor Yellow "Not modifying version in AppxManifest"
+        }
+      shell: powershell
+      env:
+        GIT_TAG: ${{ steps.get_version.outputs.VERSION }}
+    - name: UWP build
+      run: |
+        cd project
+        nuget restore
+        msbuild $env:PROJECT_FILE /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
+      shell: powershell
+      env:
+        PROJECT_FILE: VVVVV.sln
+        BUILD_ARCH: ${{ matrix.build_arch }}
+        CONFIGURATION: Release
+        PLATFORM_TOOLSET: v142
+        PACKAGE_DIR: appx
+        PACKAGE_BUILD_MODE: SideloadOnly
+        CERT_FILE: VVVVV_TemporaryKey.pfx
+        CERT_KEY: ${{ secrets.CERT_KEY }}
