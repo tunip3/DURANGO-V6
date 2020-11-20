@@ -40,6 +40,7 @@ namespace Menu
         setslowdown,
         unlockmenu,
         credits,
+        credits1,
         credits2,
         credits25,
         credits3,

@@ -907,7 +907,7 @@ void menuactionpress()
         case 0:
             //next page
             music.playef(11);
-            game.createmenu(Menu::credits2, true);
+            game.createmenu(Menu::credits1, true);
             map.nexttowercolour();
             break;
         case 1:
@@ -918,6 +918,30 @@ void menuactionpress()
             map.nexttowercolour();
             break;
         default:
+            //back
+            music.playef(11);
+            game.returnmenu();
+            map.nexttowercolour();
+            break;
+        }
+        break;
+    case Menu::credits1:
+        switch (game.currentmenuoption)
+        {
+        case 0:
+            //next page
+            music.playef(11);
+            game.createmenu(Menu::credits2, true);
+            map.nexttowercolour();
+            break;
+        case 1:
+            //previous page
+            music.playef(11);
+            game.createmenu(Menu::credits, true);
+            game.currentmenuoption = 1;
+            map.nexttowercolour();
+            break;
+        case 2:
             //back
             music.playef(11);
             game.returnmenu();
@@ -937,7 +961,7 @@ void menuactionpress()
         case 1:
             //previous page
             music.playef(11);
-            game.createmenu(Menu::credits, true);
+            game.createmenu(Menu::credits1, true);
             game.currentmenuoption = 1;
             map.nexttowercolour();
             break;

@@ -86,6 +86,7 @@ bool binaryBlob::unPackBinary(const char* name)
 
 	PHYSFS_readBytes(handle, &m_headers, sizeof(m_headers));
 
+	int valid = 0;
 	int offset = 0 + (sizeof(m_headers));
 
 	for (size_t i = 0; i < SDL_arraysize(m_headers); i += 1)
@@ -117,8 +118,13 @@ bool binaryBlob::unPackBinary(const char* name)
 		}
 		PHYSFS_readBytes(handle, m_memblocks[i], m_headers[i].size);
 		offset += m_headers[i].size;
+		valid += 1;
 	}
 	PHYSFS_close(handle);
+
+	if (valid == 0) {
+		return false;
+	}
 
 	printf("The complete reloaded file size: %lli\n", size);
 
@@ -185,7 +191,7 @@ std::vector<int> binaryBlob::getExtra()
 	for (size_t i = 0; i < SDL_arraysize(m_headers); i += 1)
 	{
 		if (m_headers[i].valid
-#define FOREACH_TRACK(track_name) && SDL_strcmp(m_headers[i].name, track_name) != 0
+#define FOREACH_TRACK(track_name) && strcmp(m_headers[i].name, "data/" track_name) != 0
 		TRACK_NAMES
 #undef FOREACH_TRACK
 		) {

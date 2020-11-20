@@ -19,6 +19,8 @@
 #include "Script.h"
 #include "UtilityClass.h"
 
+
+
 // lol, Win32 -flibit
 #ifdef _WIN32
 #define strcasecmp stricmp
@@ -6664,6 +6666,12 @@ void Game::createmenu( enum Menu::MenuName t, bool samemenu/*= false*/ )
     case Menu::credits:
         option("next page");
         option("last page");
+        option("return");
+        menuyoff = 64;
+        break;
+    case Menu::credits1:
+        option("next page");
+        option("previous page");
         option("return");
         menuyoff = 64;
         break;

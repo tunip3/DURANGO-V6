@@ -1,4 +1,3 @@
-#define MUSIC_DEFINITION
 #include "Music.h"
 
 #include <SDL.h>
@@ -7,8 +6,13 @@
 #include "BinaryBlob.h"
 #include "Map.h"
 #include "UtilityClass.h"
+#include "physfsrwops.h"
+#include <windows.h>
+
 
 void songend();
+
+char* msgbuf;
 
 void musicclass::init()
 {
@@ -54,7 +58,7 @@ void musicclass::init()
 
 #ifdef VVV_COMPILEMUSIC
 	binaryBlob musicWriteBlob;
-#define FOREACH_TRACK(track_name) musicWriteBlob.AddFileToBinaryBlob(track_name);
+#define FOREACH_TRACK(track_name) musicWriteBlob.AddFileToBinaryBlob("data/" track_name);
 	TRACK_NAMES
 #undef FOREACH_TRACK
 
@@ -66,36 +70,53 @@ void musicclass::init()
 
 	if (!musicReadBlob.unPackBinary("mmmmmm.vvv"))
 	{
-		mmmmmm = false;
-		usingmmmmmm=false;
-		bool ohCrap = musicReadBlob.unPackBinary("vvvvvvmusic.vvv");
-		SDL_assert(ohCrap && "Music not found!");
+		if (musicReadBlob.unPackBinary("vvvvvvmusic.vvv")) {
+			OutputDebugStringA("Loading music from PPPPPP blob...\n");
+
+			mmmmmm = false;
+			usingmmmmmm=false;
+
+			int index;
+			SDL_RWops* rw;
+
+#define FOREACH_TRACK(track_name) \
+	index = musicReadBlob.getIndex("data/" track_name); \
+	rw = SDL_RWFromMem(musicReadBlob.getAddress(index), musicReadBlob.getSize(index)); \
+	musicTracks.push_back(MusicTrack( rw ));
+
+			TRACK_NAMES
+
+#undef FOREACH_TRACK
+		} else {
+			OutputDebugStringA("Loading music from loose files...\n");
+
+			SDL_RWops* rw;
+#define FOREACH_TRACK(track_name) \
+	rw = PHYSFSRWOPS_openRead(track_name); \
+	musicTracks.push_back(MusicTrack( rw ));
+
+			TRACK_NAMES
+
+#undef FOREACH_TRACK
+		}
 	}
 	else
 	{
+		OutputDebugStringA("Loading PPPPPP and MMMMMM blobs...\n");
+
 		mmmmmm = true;
 		usingmmmmmm = true;
 		int index;
 		SDL_RWops *rw;
 
 #define FOREACH_TRACK(track_name) \
-	index = musicReadBlob.getIndex(track_name); \
-	if (index >= 0 && index < musicReadBlob.max_headers) \
-	{ \
-		rw = SDL_RWFromMem(musicReadBlob.getAddress(index), musicReadBlob.getSize(index)); \
-		if (rw == NULL) \
-		{ \
-			printf("Unable to read music file header: %s\n", SDL_GetError()); \
-		} \
-		else \
-		{ \
-			musicTracks.push_back(MusicTrack( rw )); \
-		} \
-	}
+	index = musicReadBlob.getIndex("data/" track_name); \
+	rw = SDL_RWFromMem(musicReadBlob.getAddress(index), musicReadBlob.getSize(index)); \
+	musicTracks.push_back(MusicTrack( rw ));
 
 		TRACK_NAMES
 
-		num_mmmmmm_tracks += musicTracks.size();
+		num_mmmmmm_tracks += 16;
 
 		const std::vector<int> extra = musicReadBlob.getExtra();
 		for (size_t i = 0; i < extra.size(); i++)
@@ -109,17 +130,15 @@ void musicclass::init()
 
 		bool ohCrap = musicReadBlob.unPackBinary("vvvvvvmusic.vvv");
 		SDL_assert(ohCrap && "Music not found!");
-	}
 
-	int index;
-	SDL_RWops *rw;
-
-	TRACK_NAMES
+		TRACK_NAMES
 
 #undef FOREACH_TRACK
+	}
 
-	num_pppppp_tracks += musicTracks.size() - num_mmmmmm_tracks;
+	num_pppppp_tracks += 16;
 
+	SDL_RWops* rw;
 	const std::vector<int> extra = musicReadBlob.getExtra();
 	for (size_t i = 0; i < extra.size(); i++)
 	{
@@ -132,7 +151,7 @@ void musicclass::init()
 
 	safeToProcessMusic= false;
 	m_doFadeInVol = false;
-	musicVolume = MIX_MAX_VOLUME;
+	musicVolume = 128;
 	FadeVolAmountPerFrame = 0;
 
 	currentsong = 0;
@@ -152,22 +171,18 @@ void musicclass::init()
 
 void songend()
 {
-	extern musicclass music;
 	music.songEnd = SDL_GetPerformanceCounter();
 	music.currentsong = -1;
 }
 
 void musicclass::play(int t, const double position_sec /*= 0.0*/, const int fadein_ms /*= 3000*/)
 {
+	// No need to check if num_tracks is greater than 0, we wouldn't be here if it wasn't
 	if (mmmmmm && usingmmmmmm)
 	{
-		// Don't conjoin this if-statement with the above one...
-		if (num_mmmmmm_tracks > 0)
-		{
-			t %= num_mmmmmm_tracks;
-		}
+		t %= num_mmmmmm_tracks;
 	}
-	else if (num_pppppp_tracks > 0)
+	else
 	{
 		t %= num_pppppp_tracks;
 	}
@@ -177,7 +192,7 @@ void musicclass::play(int t, const double position_sec /*= 0.0*/, const int fade
 		t += num_mmmmmm_tracks;
 	}
 	safeToProcessMusic = true;
-	musicVolume = MIX_MAX_VOLUME;
+	Mix_VolumeMusic(128);
 	if (currentsong !=t)
 	{
 		if (t != -1)
@@ -185,7 +200,7 @@ void musicclass::play(int t, const double position_sec /*= 0.0*/, const int fade
 			currentsong = t;
 			if (!INBOUNDS_VEC(t, musicTracks))
 			{
-				puts("play() out-of-bounds!");
+				OutputDebugStringA("play() out-of-bounds!\n");
 				currentsong = -1;
 				return;
 			}
@@ -194,7 +209,8 @@ void musicclass::play(int t, const double position_sec /*= 0.0*/, const int fade
 				// Level Complete theme, no fade in or repeat
 				if(Mix_FadeInMusicPos(musicTracks[t].m_music, 0, 0, position_sec)==-1)
 				{
-					printf("Mix_FadeInMusicPos: %s\n", Mix_GetError());
+					sprintf(msgbuf, "Mix_FadeInMusicPos: %s\n", Mix_GetError());
+					OutputDebugStringA(msgbuf);
 				}
 			}
 			else
@@ -210,7 +226,8 @@ void musicclass::play(int t, const double position_sec /*= 0.0*/, const int fade
 				}
 				else if(Mix_FadeInMusicPos(musicTracks[t].m_music, -1, fadein_ms, position_sec)==-1)
 				{
-					printf("Mix_FadeInMusicPos: %s\n", Mix_GetError());
+					sprintf(msgbuf, Mix_GetError());
+					OutputDebugStringA(msgbuf);
 				}
 			}
 
@@ -246,6 +263,7 @@ void musicclass::haltdasmusik()
 
 void musicclass::silencedasmusik()
 {
+	Mix_VolumeMusic(0) ;
 	musicVolume = 0;
 }
 
@@ -264,6 +282,7 @@ void musicclass::fadeout()
 void musicclass::processmusicfadein()
 {
 	musicVolume += FadeVolAmountPerFrame;
+	Mix_VolumeMusic(musicVolume);
 	if (musicVolume >= MIX_MAX_VOLUME)
 	{
 		m_doFadeInVol = false;
@@ -348,7 +367,7 @@ void musicclass::changemusicarea(int x, int y)
 
 void musicclass::playef(int t)
 {
-	if (!INBOUNDS_VEC(t, soundTracks))
+	if (t < 0 || t >= (int) soundTracks.size())
 	{
 		return;
 	}

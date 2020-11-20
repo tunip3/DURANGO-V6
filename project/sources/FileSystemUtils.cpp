@@ -62,12 +62,19 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, char *assetsPath)
 	else
 	{
 		PLATFORM_getOSDirectory(output);
+		OutputDebugStringA(output);
 	}
-
+	//PHYSFS_ErrorCode temperr;
+	mkdirResult = PHYSFS_setWriteDir(output);
+	//temperr = PHYSFS_getLastErrorCode();
+	//OutputDebugStringA(PHYSFS_getErrorByCode(temperr));
 	/* Create base user directory, mount */
-	mkdirResult = PHYSFS_mkdir(output);
-
+	mkdirResult = PHYSFS_mkdir("VVVVVV");
+	//mkdirResult = PHYSFS_mkdir("VVVVVV");
+	//temperr = PHYSFS_getLastErrorCode();
+	//OutputDebugStringA(PHYSFS_getErrorByCode(temperr));
 	/* Mount our base user directory */
+	SDL_strlcat(output, "\\VVVVVV", MAX_PATH);
 	PHYSFS_mount(output, NULL, 0);
 	PHYSFS_setWriteDir(output);
 	printf("Base directory: %s\n", output);
@@ -112,10 +119,10 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, char *assetsPath)
 	}
 	if (!PHYSFS_mount(output, NULL, 1))
 	{
-		puts("Error: data.zip missing!");
-		puts("You do not have data.zip!");
-		puts("Grab it from your purchased copy of the game,");
-		puts("or get it from the free Make and Play Edition.");
+		OutputDebugStringA("Error: data.zip missing!\n");
+		OutputDebugStringA("You do not have data.zip!\n");
+		OutputDebugStringA("Grab it from your purchased copy of the game,\n");
+		OutputDebugStringA("or get it from the free Make and Play Edition.\n");
 
 		SDL_ShowSimpleMessageBox(
 			SDL_MESSAGEBOX_ERROR,
@@ -305,6 +312,7 @@ bool FILESYSTEM_saveTiXml2Document(const char *name, tinyxml2::XMLDocument& doc)
 	PHYSFS_File* handle = PHYSFS_openWrite(name);
 	if (handle == NULL)
 	{
+		OutputDebugStringA(PHYSFS_getWriteDir());
 		return false;
 	}
 	PHYSFS_writeBytes(handle, printer.CStr(), printer.CStrSize() - 1); // subtract one because CStrSize includes terminating null
@@ -353,17 +361,15 @@ void PLATFORM_getOSDirectory(char* output)
 {
 #ifdef _WIN32
 	/* This block is here for compatibility, do not touch it! */
-	Platform::String^ folder = UserDataPaths::GetDefault()->Documents;
 	//WCHAR utf16_path[MAX_PATH];
-	std::wstring temporarypain = std::wstring(folder->Begin(), folder->End());
-	//utf16_path[0] = temporarypain.c_str();
+	std::wstring temporarypain = Windows::Storage::ApplicationData::Current->LocalFolder->Path->Data();
+	//utf16_path[0] = temporarypain.c_str();		
 	//output = folder;
 	//WCHAR utf16_path[MAX_PATH];
 	//std::filesystem::path temppath("%userprofile%\documents");
 	//utf16_path[0] = (WCHAR)temppath.string().c_str();
 	//SHGetFolderPath(NULL, CSIDL_PERSONAL, NULL, SHGFP_TYPE_CURRENT, utf16_path);
 	WideCharToMultiByte(CP_UTF8, 0, &temporarypain[0], -1, output, MAX_PATH, NULL, NULL);
-	SDL_strlcat(output, "\\VVVVVV\\", MAX_PATH);
 #else
 	SDL_strlcpy(output, PHYSFS_getPrefDir("distractionware", "VVVVVV"), MAX_PATH);
 #endif
@@ -509,7 +515,9 @@ void PLATFORM_migrateSaveData(char* output)
 	} while (FindNextFile(hFind, &findHandle));
 	*/
 
-	sprintf((char *)fileSearch, "%s\\*.vvvvvv", oldDirectory);
+	char buffer[MAX_PATH];
+	sprintf(buffer, "%s\\*.vvvvvv", oldDirectory);
+	wcstombs(buffer, fileSearch, sizeof(buffer));
 	hFind = FindFirstFile(fileSearch, &findHandle);
 	if (hFind == INVALID_HANDLE_VALUE)
 	{

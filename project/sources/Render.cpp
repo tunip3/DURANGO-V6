@@ -256,6 +256,11 @@ void menurender()
         graphics.bigprint( 40, 135, "Magnus P~lsson", tr, tg, tb, true, 2);
         graphics.drawimagecol(8, -1, 156, tr *0.75, tg *0.75, tb *0.75, true);
         break;
+    case Menu::credits1:
+        graphics.Print(-1, 50, "Ported to the Xbox One by", tr, tg, tb, true);
+        graphics.bigprint(40, 65, "Tunip3", tr, tg, tb, true, 2);
+        graphics.Print(-1, 120, "https://github.com/tunip3", tr, tg, tb, true);
+        break;
     case Menu::credits2:
         graphics.Print( -1, 50, "Roomnames are by", tr, tg, tb, true);
         graphics.bigprint( 40, 65, "Bennett Foddy", tr, tg, tb, true);

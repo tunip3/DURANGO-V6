@@ -1,8 +1,12 @@
 #include "SoundSystem.h"
 
 #include <SDL.h>
+#include <SDL_mixer.h>
 
 #include "FileSystemUtils.h"
+#include <windows.h>
+
+char* messagesiguess;
 
 MusicTrack::MusicTrack(const char* fileName)
 {
@@ -42,7 +46,8 @@ SoundTrack::SoundTrack(const char* fileName)
 
 	if (sound == NULL)
 	{
-		fprintf(stderr, "Unable to load WAV file: %s\n", Mix_GetError());
+		//sprintf(messagesiguess, "Unable to load WAV file: %s\n", Mix_GetError());
+		//utputDebugStringA(messagesiguess);
 	}
 }
 
@@ -52,10 +57,21 @@ SoundSystem::SoundSystem()
 	Uint16 audio_format = AUDIO_S16SYS;
 	int audio_channels = 2;
 	int audio_buffers = 1024;
-
+	//this appears to be getting called before sdl init for some reason
+	//look at call stack
+	if (SDL_WasInit(SDL_INIT_AUDIO) == 0)
+	{
+		OutputDebugStringA("audio no init");
+		/*if (SDL_Init(SDL_INIT_AUDIO) != 0)
+		{
+			OutputDebugStringA(SDL_GetError());
+		}*/
+	}
 	if (Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers) != 0)
 	{
-		fprintf(stderr, "Unable to initialize audio: %s\n", Mix_GetError());
+		OutputDebugStringA(Mix_GetError());
+		//sprintf(messagesiguess, "Unable to initialize audio: %s\n", Mix_GetError());
+		//OutputDebugStringA(messagesiguess);
 		SDL_assert(0 && "Unable to initialize audio!");
 	}
 }
