@@ -1,6 +1,7 @@
 [submodule "project/externals/SDL2"]
 	path = project/externals/SDL2
-	url = https://github.com/spurious/SDL-mirror.git
+	url = https://github.com/tuxuser/SDL.git
+	branch = winrt_vs2019
 [submodule "project/externals/SDL2_mixer"]
 	path = project/externals/SDL2_mixer
 	url = https://github.com/Akaricchi/SDL2_mixer.git
