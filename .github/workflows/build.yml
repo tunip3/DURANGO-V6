@@ -2,25 +2,15 @@ name: build
 
 on:
   push:
-    branches: [ "main", "task/restructure" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "task/restructure" ]
+    branches: [ "main" ]
 
 jobs:
   winrt-build:
     runs-on: windows-latest
-    strategy:
-      matrix:
-        build_arch: ['x64']
 
     steps:
-    - name: setup-msbuild
-      uses: microsoft/setup-msbuild@v1.0.2
-
-    - name: Setup NuGet.exe for use with actions
-      uses: NuGet/setup-nuget@v1
-      with:
-        nuget-version: latest
     - uses: actions/checkout@v2
       with:
         submodules: 'recursive'
@@ -52,7 +42,7 @@ jobs:
       shell: powershell
       env:
         OUTPUT_PATH: output 
-        BUILD_ARCH: ${{ matrix.build_arch }}
+        BUILD_ARCH: x64
         CONFIGURATION: Debug
         PLATFORM_TOOLSET: v142
         WINDOWS_TARGET_PLATFORM_VERSION: "10.0"
