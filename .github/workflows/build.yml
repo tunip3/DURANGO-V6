@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: setup-msbuild
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Setup NuGet.exe for use with actions
       uses: NuGet/setup-nuget@v1
