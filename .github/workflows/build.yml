@@ -6,15 +6,23 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  COMMON_MSBUILD_ARGS: "/p:OutputPath=output /p:Platform=x64 /p:Configuration=Debug /p:WindowsTargetPlatformVersion=10.0"
+
 jobs:
   winrt-build:
     runs-on: windows-latest
 
     steps:
-    - uses: microsoft/setup-msbuild@v1.0.2
     - uses: actions/checkout@v2
       with:
         submodules: 'recursive'
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1.0.2
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1
+      with:
+        nuget-version: latest  
     - name: Get the version
       id: get_version
       run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
@@ -33,19 +41,28 @@ jobs:
       shell: powershell
       env:
         GIT_TAG: ${{ steps.get_version.outputs.VERSION }}
-    - name: UWP build
+    - name: NuGet restore
       run: |
         cd project
         nuget restore
-        msbuild externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
-        msbuild externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
-        msbuild VVVVV.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
+        cd ..
+    - name: Build SDL2
+      run: |
+        cd project
+        msbuild externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.sln $env:COMMON_MSBUILD_ARGS
+        cd ..
+    - name: Build SDL2_mixer
+      run: |
+        cd project
+        msbuild externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.sln $env:COMMON_MSBUILD_ARGS
+        cd ..
+    - name: Build project
+      run: |
+        cd project
+        msbuild VVVVV.sln $env:COMMON_MSBUILD_ARGS /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
+        cd ..
       shell: powershell
       env:
-        OUTPUT_PATH: output 
-        BUILD_ARCH: x64
-        CONFIGURATION: Debug
-        WINDOWS_TARGET_PLATFORM_VERSION: "10.0"
         PACKAGE_DIR: appx
         PACKAGE_BUILD_MODE: SideloadOnly
         CERT_FILE: VVVVV_TemporaryKey.pfx
