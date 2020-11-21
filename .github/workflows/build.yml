@@ -46,10 +46,11 @@ jobs:
       run: |
         cd project
         nuget restore
-        msbuild $env:PROJECT_FILE /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
+        msbuild externals\SDL2\VisualC-WinRT\UWP_VS2015\libvorbis_dynamic-UWP.vcxproj /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
+        msbuild externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\libvorbis_dynamic-UWP.vcxproj /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
+        msbuild VVVVV.sln /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
       shell: powershell
       env:
-        PROJECT_FILE: VVVVV.sln
         BUILD_ARCH: ${{ matrix.build_arch }}
         CONFIGURATION: Debug
         PLATFORM_TOOLSET: v142
