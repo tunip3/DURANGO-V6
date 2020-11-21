@@ -46,6 +46,9 @@ jobs:
         cd project
         nuget restore
         cd ..
+    - name: Overwrite sdl2_mixer files
+      run: |
+        copy mixerfixfiles\* project\externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\
     - name: Build SDL2
       run: |
         cd project
