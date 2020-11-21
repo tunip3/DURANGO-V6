@@ -51,7 +51,7 @@ jobs:
       env:
         PROJECT_FILE: VVVVV.sln
         BUILD_ARCH: ${{ matrix.build_arch }}
-        CONFIGURATION: Release
+        CONFIGURATION: Debug
         PLATFORM_TOOLSET: v142
         PACKAGE_DIR: appx
         PACKAGE_BUILD_MODE: SideloadOnly
