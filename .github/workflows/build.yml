@@ -36,15 +36,14 @@ jobs:
       run: |
         cd project
         nuget restore
-        msbuild externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
-        msbuild externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
-        msbuild VVVVV.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:PlatformToolset=$env:PLATFORM_TOOLSET /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
+        msbuild externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
+        msbuild externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION
+        msbuild VVVVV.sln /p:OutputPath=$env:OUTPUT_PATH /p:Platform=$env:BUILD_ARCH /p:Configuration=$env:CONFIGURATION /p:WindowsTargetPlatformVersion=$env:WINDOWS_TARGET_PLATFORM_VERSION /p:AppxBundlePlatforms="$env:BUILD_ARCH" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
       shell: powershell
       env:
         OUTPUT_PATH: output 
         BUILD_ARCH: x64
         CONFIGURATION: Debug
-        PLATFORM_TOOLSET: v142
         WINDOWS_TARGET_PLATFORM_VERSION: "10.0"
         PACKAGE_DIR: appx
         PACKAGE_BUILD_MODE: SideloadOnly
