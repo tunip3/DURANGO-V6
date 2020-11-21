@@ -7,13 +7,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VVVVV", "winrt.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2-UWP", "externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.vcxproj", "{89E9B32E-A86A-47C3-A948-D2B1622925CE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2_mixer-UWP", "externals\SDL2_mixer-2.0.4\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.vcxproj", "{18665277-E558-4484-93F4-E4DC7BB614CB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2_mixer-UWP", "externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.vcxproj", "{18665277-E558-4484-93F4-E4DC7BB614CB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogg_dynamic-UWP", "externals\SDL2_mixer-2.0.4\VisualC-WinRT\UWP_VS2015\libogg_dynamic-UWP.vcxproj", "{B14F8B7F-C9FF-4FD3-B328-7C68AB801E85}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogg_dynamic-UWP", "externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\libogg_dynamic-UWP.vcxproj", "{B14F8B7F-C9FF-4FD3-B328-7C68AB801E85}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbis_dynamic-UWP", "externals\SDL2_mixer-2.0.4\VisualC-WinRT\UWP_VS2015\libvorbis_dynamic-UWP.vcxproj", "{6B6C1F59-6A82-4097-8907-04DF5C95D014}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbis_dynamic-UWP", "externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\libvorbis_dynamic-UWP.vcxproj", "{6B6C1F59-6A82-4097-8907-04DF5C95D014}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbisfile_dynamic-UWP", "externals\SDL2_mixer-2.0.4\VisualC-WinRT\UWP_VS2015\libvorbisfile_dynamic-UWP.vcxproj", "{70EF3B8F-6AAF-401B-9818-3371E950E73C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbisfile_dynamic-UWP", "externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\libvorbisfile_dynamic-UWP.vcxproj", "{70EF3B8F-6AAF-401B-9818-3371E950E73C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
