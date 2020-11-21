@@ -46,18 +46,10 @@ jobs:
         cd project
         nuget restore
         cd ..
-    - name: Build SDL2
-      run: |
-        cd project
-        msbuild externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.sln $env:COMMON_MSBUILD_ARGS
-        cd ..
-    - name: Build SDL2_mixer
+    - name: overwrite vcxproj
       run: |
         echo overwrite vcxproj
         copy mixerfixfiles\* project\externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015
-        cd project
-        msbuild externals\SDL2_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.sln $env:COMMON_MSBUILD_ARGS
-        cd ..
     - name: Build project
       run: |
         cd project
