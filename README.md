@@ -10,5 +10,14 @@ Before building you must run the following command in the base directory for the
 You should also make sure to clone all submodules by running:
 `git clone --recurse-submodules https://github.com/tunip3/DURANGO-V6.git`
 
+## License
+Whilst this project is open source VVVVVV's assets are not
+
+The original repo and the full license can be found at:
+
+https://github.com/TerryCavanagh/VVVVVV
+
+The data.zip included is from the make and play edition with permission from Terry Cavanagh.
+
 ## Footage
 [![](http://img.youtube.com/vi/oGu93FOB7U4/0.jpg)](http://www.youtube.com/watch?v=oGu93FOB7U4 "")
