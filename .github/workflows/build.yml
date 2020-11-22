@@ -53,7 +53,7 @@ jobs:
     - name: Build project
       run: |
         cd project
-        msbuild VVVVV.sln $env:COMMON_MSBUILD_ARGS /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=$env:PACKAGE_BUILD_MODE /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
+        msbuild VVVVV.sln $env:COMMON_MSBUILD_ARGS /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode="Sideload" /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
         cd ..
       shell: powershell
       env:
