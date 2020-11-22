@@ -58,3 +58,8 @@ jobs:
         PACKAGE_BUILD_MODE: SideloadOnly
         CERT_FILE: VVVVV_TemporaryKey.pfx
         CERT_KEY: ${{ secrets.CERT_KEY }}
+    - uses: actions/upload-artifact@v2
+      with:
+        name: VVVVV_*_x64_Debug.msixbundle
+        path: appx\**\VVVVV_*_x64_Debug.msixbundle
+
