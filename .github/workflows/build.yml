@@ -52,7 +52,9 @@ jobs:
         cd project
         msbuild VVVVV.sln /p:OutputPath=output /p:Platform=x64 /p:Configuration=Debug /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode="Sideload" /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
         cd appx
+        cd VVVVV_1.0.0.0_Debug_Test
         dir
+        cd ..
         cd ..
         cd ..
       shell: powershell
