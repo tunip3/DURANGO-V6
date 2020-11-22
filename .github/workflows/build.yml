@@ -58,13 +58,13 @@ jobs:
         PACKAGE_BUILD_MODE: SideloadOnly
         CERT_FILE: VVVVV_TemporaryKey.pfx
         CERT_KEY: ${{ secrets.CERT_KEY }}
+    - name: generate artifact zip
+      run: |
+        Compress-Archive -Path project/appx/* -DestinationPath VVVVVV-Release.zip
     - uses: actions/upload-artifact@v2
       with:
-        name: |
-          VVVVVV.msixbundle
-          Microsoft.VCLibs.x64.Debug.14.00.appx
-        path: |
-          project/appx/**/*.msixbundle
-          project/appx/**/Dependencies/**/Microsoft.VCLibs.x64.Debug.14.00.appx
+        name: VVVVVV-Release.zip
+        path: VVVVVV-Release.zip
+          
           
 
