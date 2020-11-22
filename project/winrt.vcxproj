@@ -293,6 +293,9 @@
   <ItemGroup>
     <ClCompile Include="sources\vendor\physfs\physfsrwops.c">
       <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsWinRT>
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</CompileAsWinRT>
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">false</CompileAsWinRT>
     </ClCompile>
     <ClCompile Include="sources\vendor\tinyxml2\tinyxml2.cpp" />
     <ClCompile Include="sources\vendor\lodepng\lodepng.cpp" />
