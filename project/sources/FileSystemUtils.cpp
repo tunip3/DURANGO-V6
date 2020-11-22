@@ -8,8 +8,8 @@
 #include <vector>
 #include <cstdlib>
 
-#include <physfs.h>
-#include <tinyxml2.h>
+#include "vendor\physfs\physfs.h"
+#include "vendor\tinyxml2\tinyxml2.h"
 #include "Graphics.h"
 #include "UtilityClass.h"
 

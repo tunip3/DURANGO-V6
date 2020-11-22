@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <lodepng.h>
 
+#include "vendor\lodepng\lodepng.h"
 #include "FileSystemUtils.h"
 
 // Used to load PNG data

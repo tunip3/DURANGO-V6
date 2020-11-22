@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <physfs.h> /* FIXME: Abstract to FileSystemUtils! */
+#include "vendor\physfs\physfs.h" /* FIXME: Abstract to FileSystemUtils! */
 #include "UtilityClass.h"
 
 binaryBlob::binaryBlob()

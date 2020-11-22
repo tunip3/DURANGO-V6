@@ -1,4 +1,4 @@
-#include <tinyxml2.h>
+#include "vendor\tinyxml2\tinyxml2.h"
 #include "Credits.h"
 #include "editor.h"
 #include "Entity.h"

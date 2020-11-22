@@ -1,8 +1,8 @@
 #include "Screen.h"
 
 #include <stdlib.h>
-#include <lodepng.h>
 
+#include "vendor\lodepng\lodepng.h"
 #include "FileSystemUtils.h"
 #include "GraphicsUtil.h"
 
