@@ -13,7 +13,7 @@
 #include "Logic.h"
 #include "Map.h"
 #include "Music.h"
-#include "Network.h"
+#include "network/Network.h"
 #include "preloader.h"
 #include "Render.h"
 #include "Screen.h"

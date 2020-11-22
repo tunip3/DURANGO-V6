@@ -7,7 +7,7 @@
 #include "Graphics.h"
 #include "Map.h"
 #include "Music.h"
-#include "Network.h"
+#include "network/Network.h"
 #include "Script.h"
 #include "UtilityClass.h"
 
