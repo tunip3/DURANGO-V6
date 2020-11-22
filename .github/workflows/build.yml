@@ -53,6 +53,10 @@ jobs:
     - name: Build project
       run: |
         cd project
+        echo "$env:COMMON_MSBUILD_ARGS"
+        echo "$env:PACKAGE_DIR"
+        echo "$env:CERT_FILE"
+        echo "$env:CERT_KEY"
         msbuild VVVVV.sln $env:COMMON_MSBUILD_ARGS /p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$env:PACKAGE_DIR" /p:AppxBundle=Always /p:UapAppxPackageBuildMode="Sideload" /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="" /p:PackageCertificateKeyFile="$env:CERT_FILE" /p:PackageCertificatePassword="$env:CERT_KEY"
         cd ..
       shell: powershell
