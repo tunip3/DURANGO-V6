@@ -60,6 +60,6 @@ jobs:
         CERT_KEY: ${{ secrets.CERT_KEY }}
     - uses: actions/upload-artifact@v2
       with:
-        name: VVVVV_*_x64_Debug.msixbundle
+        name: VVVVV.msixbundle
         path: project/appx/**/*.msixbundle
 
