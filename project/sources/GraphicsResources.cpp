@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <lodepng.h>
 
 #include "FileSystemUtils.h"
-#include "lodepng.h"
 
 // Used to load PNG data
 /*extern "C"

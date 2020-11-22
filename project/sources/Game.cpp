@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "tinyxml2.h"
+#include <tinyxml2.h>
 #include "editor.h"
 #include "Entity.h"
 #include "Enums.h"

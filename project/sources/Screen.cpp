@@ -1,10 +1,11 @@
 #include "Screen.h"
 
 #include <stdlib.h>
+#include <lodepng.h>
 
 #include "FileSystemUtils.h"
 #include "GraphicsUtil.h"
-#include "lodepng.h"
+
 
 // Used to create the window icon
 

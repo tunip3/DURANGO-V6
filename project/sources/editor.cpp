@@ -7,8 +7,8 @@
 #include <string>
 #include <utf8/unchecked.h>
 
-#include "physfs.h" /* FIXME: Abstract to FileSystemUtils! */
-#include "tinyxml2.h"
+#include <physfs.h> /* FIXME: Abstract to FileSystemUtils! */
+#include <tinyxml2.h>
 #include "Entity.h"
 #include "Enums.h"
 #include "FileSystemUtils.h"
