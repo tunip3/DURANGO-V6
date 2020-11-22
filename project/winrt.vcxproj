@@ -141,6 +141,9 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsWinRT>true</CompileAsWinRT>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/nodefaultlib:vccorlibd /nodefaultlib:msvcrtd vccorlibd.lib msvcrtd.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
@@ -165,6 +168,9 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsWinRT>true</CompileAsWinRT>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/nodefaultlib:vccorlibd /nodefaultlib:msvcrtd vccorlibd.lib msvcrtd.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <ClCompile>
@@ -189,6 +195,9 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsWinRT>true</CompileAsWinRT>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/nodefaultlib:vccorlibd /nodefaultlib:msvcrtd vccorlibd.lib msvcrtd.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -213,6 +222,9 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsWinRT>true</CompileAsWinRT>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/nodefaultlib:vccorlibd /nodefaultlib:msvcrtd vccorlibd.lib msvcrtd.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -279,6 +291,9 @@
     <Image Include="Assets\Wide310x150Logo.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="sources\vendor\physfs\physfsrwops.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
+    </ClCompile>
     <ClCompile Include="sources\vendor\tinyxml2\tinyxml2.cpp" />
     <ClCompile Include="sources\vendor\lodepng\lodepng.cpp" />
     <ClCompile Include="sources\vendor\physfs\physfs.c">
@@ -390,6 +405,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sources\vendor\physfs\physfsrwops.h" />
     <ClInclude Include="sources\vendor\tinyxml2\tinyxml2.h" />
     <ClInclude Include="sources\vendor\lodepng\lodepng.h" />
     <ClInclude Include="sources\vendor\physfs\physfs.h" />

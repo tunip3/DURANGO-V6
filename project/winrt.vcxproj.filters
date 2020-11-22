@@ -168,7 +168,6 @@
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sources\tinyxml2\tinyxml2.cpp" />
     <ClCompile Include="sources\vendor\physfs\physfs.c" />
     <ClCompile Include="sources\vendor\physfs\physfs_archiver_7z.c" />
     <ClCompile Include="sources\vendor\physfs\physfs_archiver_dir.c" />
@@ -227,6 +226,8 @@
     <ClCompile Include="sources\UtilityClass.cpp" />
     <ClCompile Include="sources\WarpClass.cpp" />
     <ClCompile Include="sources\winrt\SDL_winrt_main_NonXAML.cpp" />
+    <ClCompile Include="sources\vendor\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="sources\vendor\physfs\physfsrwops.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sources\vendor\tinyxml2\tinyxml2.h" />
@@ -270,6 +271,7 @@
     <ClInclude Include="sources\Tower.h" />
     <ClInclude Include="sources\UtilityClass.h" />
     <ClInclude Include="sources\WarpClass.h" />
+    <ClInclude Include="sources\vendor\physfs\physfsrwops.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
