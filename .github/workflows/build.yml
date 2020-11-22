@@ -60,7 +60,7 @@ jobs:
         CERT_KEY: ${{ secrets.CERT_KEY }}
     - uses: actions/upload-artifact@v2
       with:
-        name: VVVVVV-Release.zip
+        name: VVVVVV-Release
         path: project/appx/*
           
           
