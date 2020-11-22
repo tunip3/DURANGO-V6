@@ -6,7 +6,7 @@
 #include "BinaryBlob.h"
 #include "Map.h"
 #include "UtilityClass.h"
-#include "physfsrwops.h"
+#include <physfsrwops.h>
 #include <windows.h>
 
 
